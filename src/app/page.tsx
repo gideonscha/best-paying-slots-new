@@ -1,10 +1,36 @@
+'use client';
+
+import { useState } from 'react';
+
 export default function Home() {
+  const [search, setSearch] = useState('');
+
   return (
     <main className="bg-gray-50 text-gray-800">
 
+      {/* Navigation Bar */}
+      <header className="bg-white shadow">
+        <div className="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+          <h1 className="text-xl font-bold text-indigo-600">Best Paying Slots</h1>
+          <nav className="space-x-4 text-sm">
+            <a href="#top-slots" className="text-gray-700 hover:text-indigo-600">Top Slots</a>
+            <a href="#compare-casinos" className="text-gray-700 hover:text-indigo-600">Casinos</a>
+            <a href="#bonus-reviews" className="text-gray-700 hover:text-indigo-600">Bonuses</a>
+            <a href="#reddit" className="text-gray-700 hover:text-indigo-600">Reddit Picks</a>
+          </nav>
+          <input
+            type="text"
+            placeholder="Search slots or casinos..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full md:w-64 px-3 py-1 border rounded-full text-sm focus:outline-none focus:ring focus:border-indigo-300"
+          />
+        </div>
+      </header>
+
       {/* Hero Section */}
       <section className="bg-indigo-600 text-white py-16 px-6 text-center">
-        <h1 className="text-4xl font-bold mb-4">Find the Best Paying Online Slots</h1>
+        <h2 className="text-4xl font-bold mb-4">Find the Best Paying Online Slots</h2>
         <p className="text-xl mb-6">Ranked by Real Data: RTP, Payout Speed & Player Reviews</p>
         <div className="space-x-4">
           <a href="#top-slots" className="bg-white text-indigo-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100">
